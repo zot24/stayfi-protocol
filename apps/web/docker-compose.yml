@@ -2,7 +2,7 @@ version: "3.9"
 services:
   web:
     build:
-      context: ./apps/web
+      context: .
       dockerfile: Dockerfile
     image: stayfi-web:dev
     ports:
@@ -11,6 +11,5 @@ services:
       - NODE_ENV=production
     # For dev iterations, you can mount source and run dev script instead of standalone
     # volumes:
-    #   - ./apps/web:/app
+    #   - .:/app
     # command: npm run dev
-
