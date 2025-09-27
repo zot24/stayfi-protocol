@@ -1,0 +1,28 @@
+[
+    {
+        "id": "stay_asu_01",
+        "title": "loft moderno en asunción centro",
+        "city": "asunción",
+        "coords": [
+            -57.6359,
+            -25.2822
+        ],
+        "photos": [
+            "/img/asu1a.jpg",
+            "/img/asu1b.jpg"
+        ],
+        "amenities": [
+            "wifi",
+            "ac",
+            "smartlock"
+        ],
+        "baseNightly": 58,
+        "cleaningFee": 10,
+        "maxGuests": 2,
+        "hostId": "host_01",
+        "hostStakeLevel": 2,
+        "rating": 4.7,
+        "reviews": 126,
+        "availability": []
+    }
+]

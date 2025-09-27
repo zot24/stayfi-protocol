@@ -1,0 +1,37 @@
+[
+    {
+        "id": "guest_01",
+        "name": "Alicia",
+        "role": "guest",
+        "stake": 0,
+        "reputation": 0
+    },
+    {
+        "id": "host_01",
+        "name": "Diego",
+        "role": "host",
+        "stake": 2,
+        "reputation": 95
+    },
+    {
+        "id": "investor_01",
+        "name": "Marina",
+        "role": "investor",
+        "stake": 0,
+        "reputation": 0
+    },
+    {
+        "id": "provider_01",
+        "name": "Sofia",
+        "role": "provider",
+        "stake": 1,
+        "reputation": 88
+    },
+    {
+        "id": "admin_01",
+        "name": "Admin",
+        "role": "admin",
+        "stake": 0,
+        "reputation": 0
+    }
+]
