@@ -529,7 +529,7 @@ ROI: 400%+ through increased engagement
 
 **Phase 1: Controlled Beta (Dec 2025 - Feb 2026)**
 
-- 10 properties across Buenos Aires & Asunción
+- 10 properties across initial LATAM cities
 - 100 investors ($1M raised)
 - Semi-automated operations
 - Refine product-market fit

@@ -63,7 +63,7 @@ docker compose up --build
 
 ## Quick demo flow (2–3 minutes)
 
-1) Guest → explore Asunción → open a stay → donut → book
+1) Guest → explore a city → open a stay → donut → book
 2) Host → increase stake → see rank/discount → payouts update
 3) Investor → buy 100 in city fund → portfolio updates
 4) Provider → accept/complete job → reputation tick

@@ -136,7 +136,7 @@
 
 ## 2–3 minute demo script
 
-1) Switch to **Guest** → explore Asunción → open a stay → pick dates → view split donut → book → success with code.
+1) Switch to **Guest** → explore a city → open a stay → pick dates → view split donut → book → success with code.
 2) Switch to **Host** → increase stake → refresh explore; show rank/discount effect → check payouts updated.
 3) Switch to **Investor** → buy shares in “asunción urban fund” → view portfolio and next distribution.
 4) Switch to **Provider** → accept a cleaning job → complete with photo → reputation improves.
@@ -223,7 +223,7 @@
 
 ## Demo runbook (60–120 seconds)
 
-1) Guest: Filter to Asunción → open stay → donut explains splits → book.
+1) Guest: Filter to a city → open stay → donut explains splits → book.
 2) Host: Increase stake → show rank/discount change → check payouts.
 3) Investor: Buy 100 units in city fund → portfolio updates → point to distributions.
 4) Provider: Accept and complete a job → reputation ticks up.
@@ -231,7 +231,7 @@
 
 ## Appendix: Seed data overview (mock)
 
-- Stays: ≥12 across Asunción, Encarnación, CDE, Buenos Aires, São Paulo.
+- Stays: ≥12 across multiple LATAM cities.
 - Funds: ≥3 with NAV/distribution history.
 - Jobs: ≥20 open tasks; providers can accept/complete.
 - Users: ≥5 spanning all roles.

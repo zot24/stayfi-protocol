@@ -7,36 +7,37 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { JoinWaitlistButton } from "@/components/JoinWaitlistButton";
 
 const pillars = [
   {
     title: "RWA-backed ownership",
     description:
-      "Fractional revenue rights give investors exposure to short-term rental income with live APY, occupancy, and distribution tracking.",
+      "Fractional property tokens give investors exposure to real rental yield with full SPL composability and on-chain tracking.",
     bullets: [
-      "City and property funds with performance bands",
-      "Instant buy/sell execution with fee transparency",
-      "Portfolio view with upcoming distribution schedule",
+      "Properties held by DAO-controlled local entities",
+      "Instant liquidity via AMM pools (10% tokens seeded)",
+      "Compressed NFTs reduce minting costs by 1000x",
     ],
   },
   {
     title: "DePIN service network",
     description:
-      "Stays, service jobs, and staking incentives keep supply, maintenance, and guest satisfaction aligned across every market.",
+      "StayFi service pools coordinate cleaners, managers, and maintenance via stake-weighted task allocation.",
     bullets: [
-      "Guest pricing reflects host staking discounts",
-      "Providers accept, verify, and grow reputation",
-      "Hosts monitor ranking impact from active stakes",
+      "Reputation scores stored on-chain as PDAs",
+      "Instant USDC settlement via CPI to SPL program",
+      "<15min response time = 1.2x performance multiplier",
     ],
   },
   {
     title: "Protocol operations",
     description:
-      "Governance tools let operators tune fee splits, incentives, and feature flags while the platform updates in real time.",
+      "Governance with veSTAY voting, automated revenue distribution, and micro-transactions via state compression.",
     bullets: [
-      "Global fee split controls with instant recompute",
-      "Targeted boosts for new hosts and providers",
-      "Persistent settings for consistent market health",
+      "Governance via Realms DAO with veSTAY",
+      "Clockwork threads automate distribution",
+      "5% fee: 40% buyback, 40% dev, 20% insurance",
     ],
   },
 ];
@@ -44,38 +45,48 @@ const pillars = [
 const personas = [
   {
     role: "Guest",
-    copy:
-      "Browse curated stays, apply transparent pricing filters, and confirm bookings with the economics laid out before checkout.",
-    link: "/explore",
-    linkLabel: "Discover stays",
+    bullets: [
+      "Book with USDC or card",
+      "Receive a compressed booking NFT",
+      "Earn TRIP loyalty tokens",
+      "10% cheaper vs Web2 platforms",
+    ],
   },
   {
     role: "Host",
-    copy:
-      "Manage listings, calendars, and payouts while staking to boost search ranking and earn higher occupancy.",
-    link: "/host",
-    linkLabel: "Open host hub",
+    bullets: [
+      "Tokenize your property into SPL tokens",
+      "Keep 70% revenue; sell 30% for liquidity",
+      "Dynamic pricing via oracles",
+      "Instant settlement of 80% revenue",
+    ],
   },
   {
     role: "Investor",
-    copy:
-      "Evaluate city funds, execute fractional trades, and monitor distributions inside a unified portfolio dashboard.",
-    link: "/invest",
-    linkLabel: "View funds",
+    bullets: [
+      "Buy property tokens from $100",
+      "Earn daily yield via automated distribution",
+      "Provide LP to property/USDC pools",
+      "Participate in protocol governance",
+    ],
   },
   {
     role: "Provider",
-    copy:
-      "See verified jobs nearby, complete tasks with proof, and stake to climb priority queues and payout multipliers.",
-    link: "/provider",
-    linkLabel: "Check jobs",
+    bullets: [
+      "Stake 500 STAY to join the network",
+      "Tasks assigned by proximity & reputation",
+      "Instant USDC payments on completion",
+      "Build portable on-chain reputation",
+    ],
   },
   {
     role: "Admin",
-    copy:
-      "Tune fee splits, incentives, and product flags to keep every marketplace participant aligned.",
-    link: "/admin",
-    linkLabel: "Manage protocol",
+    bullets: [
+      "Multi-sig → DAO governance transition",
+      "Programmable fee distribution controls",
+      "Oracle and parameter management",
+      "Timelocked upgrades for security",
+    ],
   },
 ];
 
@@ -83,7 +94,7 @@ const experienceFlow = [
   {
     step: "1. Guest experience",
     detail:
-      "Filter Asunción stays, compare staking-powered discounts, and confirm a booking with smart-lock access and earnings split transparency.",
+      "Filter city stays, compare staking-powered discounts, and confirm a booking with smart-lock access and earnings split transparency.",
   },
   {
     step: "2. Host optimization",
@@ -93,7 +104,7 @@ const experienceFlow = [
   {
     step: "3. Investor oversight",
     detail:
-      "Purchase shares in the Asunción Urban Fund, monitor NAV drift, and review the upcoming distribution calendar.",
+      "Purchase shares in a city property fund, monitor NAV drift, and review the upcoming distribution calendar.",
   },
   {
     step: "4. Provider operations",
@@ -124,17 +135,15 @@ export default function Home() {
               Live RWA × DePIN network
             </span>
             <h1 className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
-              stayfi orchestrates guests, hosts, investors, and providers around transparent incentives.
+              StayFi orchestrates guests, hosts, investors, and service providers around transparent incentives and fractional ownership.
             </h1>
             <p className="text-lg text-muted-foreground sm:text-xl">
-              A decentralized hospitality protocol powering short-term rentals across LATAM with transparent economics, aligned incentives, and real-time governance controls.
+              A decentralized hospitality protocol powering short-term rentals across LATAM with transparent economics, aligned incentives, and real-time governance controls. Built on Solana for sub-second settlements and 1000x lower costs via state compression.
             </p>
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg" className="gap-2">
-                <Link href="/explore">Explore stays</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link href="/about">Learn about stayfi</Link>
+            <div className="flex flex-col items-center gap-4">
+              <JoinWaitlistButton className="w-full max-w-xs sm:max-w-md" />
+              <Button asChild variant="outline" size="lg" className="w-full max-w-xs sm:max-w-md">
+                <Link href="/docs">Read the documentation</Link>
               </Button>
             </div>
             <ul className="grid gap-2 text-sm text-muted-foreground sm:max-w-xl">
@@ -149,40 +158,49 @@ export default function Home() {
           <Card className="border-primary/20 bg-primary/5 shadow-lg backdrop-blur">
             <CardHeader className="space-y-2">
               <CardTitle className="text-2xl font-semibold text-primary">
-                Network snapshot
+                Network snapshot*
               </CardTitle>
               <CardDescription className="text-base">
-                Stayfi is live across the region with unified economics and operational tooling for every participant.
+                Updated figures across the network showcasing on-chain operations and market growth.
               </CardDescription>
             </CardHeader>
             <CardContent>
               <dl className="grid grid-cols-1 gap-4 text-sm sm:grid-cols-2">
                 <div className="rounded-lg border border-primary/20 bg-background px-4 py-3">
-                  <dt className="text-muted-foreground">Cities served</dt>
+                  <dt className="text-muted-foreground">Cities covered</dt>
                   <dd className="text-xl font-semibold">15 across LATAM</dd>
                 </div>
                 <div className="rounded-lg border border-primary/20 bg-background px-4 py-3">
-                  <dt className="text-muted-foreground">Investor funds</dt>
+                  <dt className="text-muted-foreground">Properties tokenized</dt>
                   <dd className="text-xl font-semibold">5 active revenue pools</dd>
                 </div>
                 <div className="rounded-lg border border-primary/20 bg-background px-4 py-3">
-                  <dt className="text-muted-foreground">Provider jobs</dt>
+                  <dt className="text-muted-foreground">Service providers</dt>
                   <dd className="text-xl font-semibold">800+ monthly tasks</dd>
                 </div>
                 <div className="rounded-lg border border-primary/20 bg-background px-4 py-3">
-                  <dt className="text-muted-foreground">Protocol uptime</dt>
+                  <dt className="text-muted-foreground">Property tokens TVL</dt>
+                  <dd className="text-xl font-semibold">$2.5M</dd>
+                </div>
+                <div className="rounded-lg border border-primary/20 bg-background px-4 py-3">
+                  <dt className="text-muted-foreground">Daily yield distributed</dt>
+                  <dd className="text-xl font-semibold">$15,000</dd>
+                </div>
+                <div className="rounded-lg border border-primary/20 bg-background px-4 py-3">
+                  <dt className="text-muted-foreground">Quarter growth</dt>
                   <dd className="text-xl font-semibold">99.9% this quarter</dd>
                 </div>
               </dl>
+              <p className="mt-2 text-xs text-muted-foreground">* Illustrative figures for demo purposes only.</p>
             </CardContent>
           </Card>
         </section>
 
         <section className="space-y-8">
           <div className="space-y-3 text-center">
-            <h2 className="text-3xl font-semibold tracking-tight">Three pillars powering the network</h2>
+            <h2 className="text-3xl font-semibold tracking-tight">Three pillars (enhanced)</h2>
             <p className="mx-auto max-w-3xl text-base text-muted-foreground">
-              Stayfi blends real-world asset yields, service marketplace incentives, and protocol governance to keep performance aligned for guests, hosts, investors, and providers.
+              RWA-backed ownership, a DePIN service network, and protocol operations align incentives across every participant.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
@@ -219,12 +237,16 @@ export default function Home() {
               <Card key={persona.role} className="flex h-full flex-col">
                 <CardHeader>
                   <CardTitle className="text-xl font-semibold">{persona.role}</CardTitle>
-                  <CardDescription>{persona.copy}</CardDescription>
                 </CardHeader>
-                <CardContent className="mt-auto">
-                  <Button asChild variant="ghost" className="px-0 text-primary">
-                    <Link href={persona.link}>{persona.linkLabel}</Link>
-                  </Button>
+                <CardContent className="space-y-2 text-sm text-muted-foreground">
+                  <ul className="space-y-2">
+                    {(persona as { bullets: string[] }).bullets.map((b) => (
+                      <li key={b} className="flex gap-2">
+                        <span aria-hidden className="mt-2 h-1 w-6 rounded-full bg-primary/30" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </CardContent>
               </Card>
             ))}
@@ -252,20 +274,15 @@ export default function Home() {
           </Card>
         </section>
 
-        <section className="space-y-6 rounded-3xl border border-dashed border-primary/40 bg-primary/5 px-6 py-10 text-center sm:px-12">
+        <section className="space-y-6 rounded-3xl border border-dashed border-primary/40 bg-primary/5 px-6 py-14 text-center sm:px-12">
           <div className="space-y-3">
-            <h2 className="text-3xl font-semibold tracking-tight">Ready to experience stayfi?</h2>
+            <h2 className="text-3xl font-semibold tracking-tight">Ready to experience StayFi?</h2>
             <p className="mx-auto max-w-2xl text-base text-muted-foreground">
               Dive into any role, optimize economics, and see how decentralized hospitality scales with trusted incentives.
             </p>
           </div>
-          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button asChild size="lg" className="gap-2">
-              <Link href="/explore">Explore the marketplace</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href="/about">Connect with our team</Link>
-            </Button>
+          <div className="flex items-center justify-center">
+            <JoinWaitlistButton />
           </div>
         </section>
       </main>

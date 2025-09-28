@@ -1,5 +1,7 @@
 # StayFI: The Ownership Layer for Global Hospitality
 
+**Version 2.0 | September 2025**
+
 ## The Opportunity
 
 The $680B short-term rental market is broken. Airbnb extracts 15% in fees. Property investment requires $100K+ minimums. Service providers wait 30-60 days for payment. We're fixing all of this.
@@ -73,4 +75,4 @@ We're not disrupting Airbnb - we're building the infrastructure for people to **
 
 **$2M seed gets us to 100 properties and profitability. Join us in democratizing real estate.**
 
-**Contact**: <team@stayfi.network> | Deck: stayfi.network/investors
+**Contact**: <team@stayfi.xyz>
