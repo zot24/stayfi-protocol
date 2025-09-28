@@ -1,60 +1,117 @@
-## stayfi – decentralized airbnb network (front‑end mock)
+## StayFi – The Ownership Layer for Global Hospitality (Front-End Mock)
+
+**Version 2.0 | September 2025**
 
 ### Purpose
 
-- **Goal**: Present a demo‑ready, front‑end simulation of a decentralized network for short‑term rentals that combines real‑world asset (RWA) revenue sharing with DePIN‑style service markets and staking incentives.
-- **Outcome**: Show how guests, hosts, investors, service providers, and a lightweight protocol admin interact; how incentives align; and how fee splits and staking affect pricing, yields, and rankings.
-- **Out of scope**: Any on‑chain logic, wallets, payments, or production‑grade auth/security. Everything is mocked and deterministic for a polished demo.
+- **Goal**: Present a demo‑ready, front‑end simulation of StayFi - a decentralized protocol that enables fractional ownership of vacation rentals through blockchain technology, combining Real World Asset (RWA) tokenization with a Decentralized Physical Infrastructure Network (DePIN) and a viral TRIP rewards system.
+- **Outcome**: Demonstrate the three-token ecosystem (STAY governance, Property ownership, TRIP rewards), show how all participants interact, visualize transparent fee economics, and showcase the viral growth mechanics that turn guests into investors.
+- **Out of scope**: Any on‑chain logic, Solana programs, wallet integration, or production security. Everything is mocked with deterministic data for a polished demo experience.
 
 ### Target Audience
 
-- **Hackathon judges, partners, early users** who want to experience the product vision and economics without blockchain integrations yet.
+- **VCs & Investors**: See the viral growth engine and unit economics in action
+- **Property Owners**: Experience tokenization benefits and instant liquidity
+- **Retail Investors**: Explore $100 fractional ownership opportunities
+- **Service Providers**: Understand instant payment and reputation systems
+- **Guests**: Discover the "Book Stays, Earn Ownership" value proposition
+- **Hackathon judges & partners**: Experience the full product vision without blockchain complexity
 
 ## Product pillars
 
-### 1) RWA simulation (investor economics)
+### 1) RWA tokenization (investor economics)
 
-- **Fractional revenue rights**: Properties (or bundled funds) offer shares that entitle holders to a portion of revenue distributions.
-- **Investor dashboards**: Show mock APY, occupancy, and per‑period distributions with simple, deterministic time series.
-- **Buy/Sell flow**: Simulated orders with slippage and fees update holdings, NAV, and distribution schedules.
+- **Fractional ownership from $100**: Each property tokenized into 2,000 tokens at $100 each
+- **Daily yield distribution**: 80% of rental revenue distributed to token holders automatically
+- **Instant liquidity**: Trade property tokens 24/7 on simulated DEX with 0.3% fees
+- **Target returns**: 10-15% APY from rental income + potential appreciation
+- **Investor dashboards**: Real-time portfolio value, yield tracking, and distribution schedules
 
-### 2) DePIN simulation (supply, services, staking)
+### 2) DePIN network (decentralized services)
 
-- **Stays marketplace**: Guests browse listings, see nightly price, fees, discounts from host staking, and real‑time availability.
-- **Service marketplace**: Cleaners/handymen discover tasks, accept work, complete with proof, and build reputation.
-- **Staking for hosts/providers**: Stake levels increase search ranking (hosts) and job priority/payout multipliers (providers).
+- **Service provider network**: Cleaners, property managers, maintenance workers
+- **Instant USDC payments**: No 30-60 day wait like traditional platforms
+- **Stake-weighted assignment**: 500 STAY minimum stake for providers
+- **Reputation scoring**: On-chain ratings affect job priority and earnings
+- **Task marketplace**: Location-based job discovery with transparent payouts
+- **Proof of completion**: Photo uploads and guest verification for quality
 
-### 3) Ops & economics (protocol levers)
+### 3) TRIP rewards engine (viral growth)
 
-- **Fee split**: By default: 90% host, 5% provider pool, 3% protocol fee, 2% reserve. Admin can change these splits.
-- **Global recompute**: Changing splits immediately updates donuts, tables, and derived metrics across the app.
-- **Feature flags & boosts**: Toggle early‑host incentives, guest vouchers, provider surges for demos.
+- **Earn TRIP tokens**: Book (10 TRIP/$100), review (50 TRIP), photos (25 TRIP), refer (100 TRIP)
+- **Conversion options**: 1000 TRIP → 1 STAY, 5000 TRIP → $100 property token
+- **Loyalty tiers**: Bronze/Silver/Gold/Platinum with multipliers up to 2x
+- **Viral coefficient 1.4x**: Each user brings 1.4 new users through gamification
+- **Psychological triggers**: Progress bars, leaderboards, achievements, streaks
+- **10x higher LTV**: Guests become investors, creating evangelists
+
+## Token Economics Overview
+
+### Three-Token Ecosystem
+
+- **STAY (1B fixed supply)**: Governance, staking, protocol value accrual
+- **Property Tokens**: Fractional ownership of specific properties, earn rental yield
+- **TRIP (unlimited)**: Loyalty rewards convertible to ownership
+
+### Key Economic Metrics
+
+- **Platform fee**: 5% (vs Airbnb's 15%)
+- **Minimum investment**: $100 (vs $100K traditional)
+- **Transaction cost**: $0.00025 (Solana advantage)
+- **State compression**: 1000x cost reduction ($0.002 vs $2 per NFT)
+- **Viral coefficient**: 1.4x (each user brings 1.4 new users)
+- **LTV/CAC ratio**: 200-400x (vs 4-8x traditional)
+
+### Growth Targets
+
+- **Year 1**: 50 properties, $1.5M GMV, $105K revenue
+- **Year 2**: 200 properties, $6M GMV, $420K revenue
+- **Year 3**: 1,000 properties, $30M GMV, $2.1M revenue, break-even
+- **Year 5**: 10,000 properties, $500M GMV, profitable
 
 ## Roles & value proposition
 
 ### Guest
 
-- **Browse → book → review** with transparent pricing and a fee split visualization.
-- **Trust signals**: Host staking level, ratings, and service quality.
+- **10% cheaper than Airbnb**: Only 5% platform fee vs 15%
+- **Earn TRIP on every action**: Booking, reviewing, sharing photos
+- **Convert to ownership**: Stay 10 nights, own a piece forever
+- **Transparent pricing**: Visual donut chart shows exact fee distribution
+- **Trust signals**: Host staking level, service provider ratings, verified reviews
 
 ### Host
 
-- **List & manage** properties, calendars, and pricing.
-- **Earn payouts** split according to global policy; **stake** to boost ranking and projected revenue.
+- **Tokenize property**: Get 30% value upfront, keep 70% future revenue
+- **Instant liquidity**: No need to sell entire property
+- **Automated management**: StayFi handles bookings and services
+- **Stake STAY for benefits**: Higher search ranking, small guest discounts (0-3%)
+- **Direct payouts**: 80% of revenue, no middleman fees
 
 ### Investor
 
-- **Explore** funds/properties with APY and risk bands.
-- **Buy/Sell** shares (mocked) to adjust positions; view distributions and PnL trajectories.
+- **Start from $100**: Own pieces of global vacation rentals
+- **Daily distributions**: Automatic revenue share from bookings
+- **10-15% target APY**: From rental yield + appreciation
+- **Instant liquidity**: Trade tokens 24/7 on DEX
+- **Diversification**: Invest across multiple properties/cities
+- **Real-time analytics**: Occupancy rates, revenue trends, NAV tracking
 
 ### Service Provider
 
-- **Jobs board** with distance, time, payout, and difficulty filters.
-- **Accept & complete** tasks with proof; stake to unlock priority and payout lifts.
+- **Instant payment**: Get paid in USDC immediately after task completion
+- **No platform commission**: Keep 100% of earnings + tips
+- **Portable reputation**: On-chain ratings follow you
+- **Stake 500 STAY minimum**: Access to task marketplace
+- **Earn TRIP rewards**: 20 TRIP per task, bonuses for excellence
+- **Location-based matching**: Tasks within your service radius
 
 ### Admin
 
-- **Tune levers** (fee splits, boosts, flags) and watch the system update in real time.
+- **Protocol governance**: Adjust fee splits (default 80/15/5)
+- **Real-time updates**: Changes propagate instantly across all UI
+- **Treasury management**: STAY buybacks and liquidity provision
+- **Feature toggles**: Demo different scenarios and incentives
+- **Analytics dashboard**: Network growth, revenue, token metrics
 
 ## Core user journeys (business flow)
 
@@ -93,31 +150,70 @@
 ## Key features (what the demo must showcase)
 
 - **Transparent pricing**: Line items and donut chart show where each booking dollar goes.
-- **Deterministic yields**: Simple functions compute APY, NAV drift, and distributions for a stable demo.
+- **Three-token system**: STAY governance, Property ownership tokens, TRIP rewards in action
+- **Viral mechanics**: See TRIP earnings, conversion options, tier progression
+- **Instant liquidity**: Mock DEX trading for property tokens with real-time pricing
+- **Service coordination**: Task assignment algorithm, instant payments, reputation
 - **Staking effects**: Host/provider staking visibly changes ranking, discounts, and payout multipliers.
 - **Global controls**: Admin fee changes propagate immediately across UI and computed economics.
 - **Local persistence**: State survives refresh to enable a continuous demo narrative.
 
+## Technology Advantages (Simulated)
+
+- **Solana benefits**: Sub-cent transactions, 0.4s confirmations, 65K TPS capacity
+- **State compression**: Shows 1000x cost savings on property NFTs
+- **Native USDC**: No bridging required for payments
+- **Compressed NFTs**: Each property stored for $0.002 instead of $2
+- **Merkle trees**: Visualize how millions of properties scale affordably
+
+## Property Lifecycle (What Demo Shows)
+
+**Week 0: Discovery**
+
+- Scout submits property (stakes 100 STAY)
+- Community interest gauge via voting
+
+**Week 1-2: Structuring**
+
+- Token economics modeling
+- Marketing material preparation
+
+**Week 3-4: Funding**
+
+- Token sale opens ($100 minimum)
+- 30% sold = funding confirmed
+- Liquidity pool initialization
+
+**Week 5+: Operations**
+
+- Live on booking platforms
+- Daily revenue distribution
+- Service provider coordination
+
 ## Screens & modules (non‑technical)
 
-- **Explore**: Search, filters, ranking, listing cards with price/discounts/ratings.
-- **Stay detail**: Gallery, amenities, split donut, instant book.
-- **Booking modal**: Dates, guests, upsells, confirmation.
-- **Invest**: Fund/property cards with sparkline and APY badge.
-- **Fund detail**: NAV line, distributions area, buy/sell widget.
-- **Portfolio**: Positions and next distributions.
-- **Host dashboard**: Listings, bookings, payouts, staking.
-- **Provider dashboard**: Jobs, staking, reputation.
-- **Admin**: Fee split sliders, boosts, feature flags.
+- **Homepage**: Hero with "Join Waitlist" CTA, network metrics, role benefits
+- **Documentation**: /docs hub with litepaper, tokenomics, diagrams
+- **Explore**: Search, filters, ranking, listing cards with price/discounts/ratings
+- **Stay detail**: Gallery, amenities, split donut, instant book, earn TRIP
+- **Booking modal**: Dates, guests, upsells, TRIP rewards preview
+- **Invest**: Property cards with yield, location, tokenization status
+- **Property detail**: Tokenomics, buy/sell widget, liquidity chart
+- **Portfolio**: Holdings, distributions, TRIP balance, tier status
+- **Host dashboard**: Tokenization wizard, revenue tracking, staking
+- **Provider dashboard**: Jobs board, instant payments, reputation score
+- **Admin**: Fee split controls, treasury stats, network growth metrics
 
 ## Data & behavior (business rules)
 
 - **Pricing**: Host stake applies a small discount to base nightly rate (0–3%).
 - **Booking total**: Nights × nightly + cleaning fee.
-- **Split**: Subtotal divided into host, providers, protocol, reserve; reserve is the remainder after rounding.
-- **Yields**: APY increases with occupancy and average nightly rate, capped (e.g., 25%).
-- **Trading**: Buy/sell adjusts portfolio positions and cost basis; simple slippage/fee can be simulated.
-- **Jobs**: Accept/complete transitions update status and reputation signals.
+- **Fee Split**: $100 booking → $80 hosts, $15 service providers, $5 protocol
+- **Property Yields**: Base 12% cap rate × platform efficiency (1.15x) × occupancy boost (1.1x)
+- **TRIP Emissions**: 100K/month base, growing 10% annually, distributed 40/20/20/20
+- **Staking Economics**: 8% base APY, up to 16% with 12-month lock
+- **Trading**: Constant product AMM (x*y=k) with 0.3% LP fees
+- **Service Matching**: Algorithm considers distance, reputation, stake weight, response time
 
 ## Acceptance criteria (demo readiness)
 
@@ -138,7 +234,7 @@
 
 1) Switch to **Guest** → explore a city → open a stay → pick dates → view split donut → book → success with code.
 2) Switch to **Host** → increase stake → refresh explore; show rank/discount effect → check payouts updated.
-3) Switch to **Investor** → buy shares in “asunción urban fund” → view portfolio and next distribution.
+3) Switch to **Investor** → buy shares in a city property fund → view portfolio and next distribution.
 4) Switch to **Provider** → accept a cleaning job → complete with photo → reputation improves.
 5) Switch to **Admin** → change fee splits → watch global recompute across charts and payout tables.
 
@@ -166,8 +262,13 @@
 
 - **RWA**: Real‑World Asset; here, revenue rights from real properties.
 - **DePIN**: Decentralized Physical Infrastructure Networks; here, human services (cleaning, maintenance) coordinated by incentives.
-- **APY**: Annual Percentage Yield; simulated from occupancy and price.
-- **Split**: The percentage allocation of booking revenue to stakeholders.
+- **APY**: Annual Percentage Yield; 10-15% target from rental income
+- **Split**: Revenue allocation: 80% token holders, 15% services, 5% protocol
+- **TRIP**: Loyalty tokens earned through participation, convertible to ownership
+- **STAY**: Governance token with fixed 1B supply, used for staking and voting
+- **TVL**: Total Value Locked; sum of all property values + liquidity pools
+- **GMV**: Gross Merchandise Value; total booking volume processed
+- **Compressed NFTs**: Solana tech reducing storage costs by 1000x ($0.002 vs $2)
 
 ---
 
@@ -213,7 +314,7 @@
 ## Competitive context (high‑level)
 
 - Traditional platforms: Centralized fees, opaque payout logic, limited service‑side incentives.
-- stayfi differentiator: Transparent economics, role‑based staking signals, and modular revenue sharing.
+- StayFi differentiator: Transparent economics, role‑based staking signals, and modular revenue sharing.
 
 ## FAQs
 
@@ -245,6 +346,10 @@
 
 ## Next‑phase scope (non‑demo)
 
-- Real APIs and Solana programs replacing MSW mocks.
-- Wallet flows and payouts; permissioned admin operations.
-- Deeper risk/seasonality modeling and provider surge pricing.
+- Solana program integration (compressed NFTs, SPL tokens)
+- Wallet connection (Phantom, Solflare)
+- Real oracle feeds (Chainlink/Pyth for valuations)
+- Cross-chain bridges for multi-chain liquidity
+- KYC/AML for investments >$10K
+- Progressive decentralization to full DAO governance
+- Mobile app with booking and portfolio management
