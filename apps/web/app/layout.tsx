@@ -16,8 +16,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "StayFi",
-  description: "Front-end mock for decentralized Airbnb network",
+  title: {
+    default: "StayFi – The Ownership Layer for Global Hospitality",
+    template: "%s · StayFi",
+  },
+  description: "Book Stays, Earn Ownership. Tokenized real estate, instant rewards, and aligned incentives.",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
