@@ -22,7 +22,15 @@ export async function POST(req: NextRequest) {
             to: [forwardTo],
             subject: "New waitlist signup",
             replyTo: email,
-            text: `A new user joined the waitlist: ${email}`,
+            text: `A new user joined the StayFi waiting list.\n\nEmail: ${email}\n\nMessage: Joining the waiting list`,
+            html: `
+              <div style=\"font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.5;color:#0f172a\">
+                <h2 style=\"margin:0 0 8px\">New Waitlist Signup</h2>
+                <p style=\"margin:0 0 16px;color:#334155\">A new user has joined the <strong>StayFi</strong> waiting list.</p>
+                <p style=\"margin:0 0 8px\"><strong>Email:</strong> ${email}</p>
+                <p style=\"margin:0\"><strong>Message:</strong> Joining the waiting list</p>
+              </div>
+            `,
         });
 
         return NextResponse.json({ ok: true });

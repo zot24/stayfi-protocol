@@ -12,9 +12,19 @@ export function JoinWaitlistButton({ className }: { className?: string }) {
     const [loading, setLoading] = useState(false);
     const [done, setDone] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const [toast, setToast] = useState<{
+        type: "success" | "error";
+        message: string;
+    } | null>(null);
 
     async function submit() {
-        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            const msg = "Please enter a valid email";
+            setError(msg);
+            setToast({ type: "error", message: msg });
+            setTimeout(() => setToast(null), 6000);
+            return;
+        }
         setLoading(true);
         try {
             const res = await fetch("/api/waitlist", {
@@ -24,18 +34,25 @@ export function JoinWaitlistButton({ className }: { className?: string }) {
             });
             if (res.ok) {
                 setDone(true);
-                setTimeout(() => setOpen(false), 1400);
+                setOpen(false);
+                setEmail("");
+                setError(null);
+                setToast({ type: "success", message: "Thanks! You’re on the StayFi waitlist." });
+                setTimeout(() => setToast(null), 6000);
             } else {
                 const data = await res.json().catch(() => ({}));
-                setError(data?.error || "Something went wrong");
+                const msg = data?.error || "Something went wrong";
+                setError(msg);
+                setToast({ type: "error", message: msg });
+                setTimeout(() => setToast(null), 6000);
             }
         } finally {
             setLoading(false);
         }
     }
 
-    if (!open) {
-        return (
+    return (
+        <>
             <Button
                 size="lg"
                 className={cn("gap-2", className)}
@@ -43,38 +60,88 @@ export function JoinWaitlistButton({ className }: { className?: string }) {
             >
                 Join the waitlist
             </Button>
-        );
-    }
+            <Dialog
+                open={open}
+                onOpenChange={(v) => {
+                    setOpen(v);
+                    if (v) {
+                        setDone(false);
+                        setError(null);
+                        setEmail("");
+                    }
+                }}
+            >
+                <DialogContent>
+                    <DialogHeader>
+                        <DialogTitle>Join the StayFi waitlist</DialogTitle>
+                    </DialogHeader>
+                    <div className="flex items-center gap-2">
+                        <Input
+                            type="email"
+                            placeholder="you@example.com"
+                            value={email}
+                            onChange={(e) => {
+                                setEmail(e.target.value);
+                                if (done) setDone(false);
+                                if (error) setError(null);
+                            }}
+                            className="h-9 w-full"
+                        />
+                        <Button onClick={submit} disabled={loading}>
+                            {loading ? "Sending…" : "Join"}
+                        </Button>
+                    </div>
+                    <p className="text-xs text-muted-foreground">
+                        We only email with meaningful updates and launch invites. No spam. Unsubscribe anytime.
+                    </p>
+                </DialogContent>
+            </Dialog>
+            <JoinWaitlistToast toast={toast} onClose={() => setToast(null)} />
+        </>
+    );
+}
 
+
+// Corner toast (local to this component)
+// Renders outside the dialog for both success and error states
+export function JoinWaitlistToast({
+    toast,
+    onClose,
+}: {
+    toast: { type: "success" | "error"; message: string } | null;
+    onClose: () => void;
+}) {
+    if (!toast) return null;
+    const isError = toast.type === "error";
     return (
-        <Dialog open={open} onOpenChange={setOpen}>
-            <DialogContent>
-                <DialogHeader>
-                    <DialogTitle>Join the StayFi waitlist</DialogTitle>
-                </DialogHeader>
-                <div className="flex items-center gap-2">
-                    <Input
-                        type="email"
-                        placeholder="you@example.com"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        className="h-9 w-full"
-                    />
-                    <Button onClick={submit} disabled={loading || done}>
-                        {done ? "Added" : loading ? "Sending…" : "Submit"}
-                    </Button>
-                </div>
-                <p className="text-xs text-muted-foreground">
-                    We only email with meaningful updates and launch invites. No spam. Unsubscribe anytime.
-                </p>
-                {error && (
-                    <p className="text-sm text-red-500">{error}</p>
+        <div
+            aria-live="polite"
+            className="fixed bottom-4 right-4 z-50 w-[320px]"
+        >
+            <div
+                className={cn(
+                    "rounded-md p-4 flex items-start gap-3 shadow-lg backdrop-blur-md",
+                    isError
+                        ? "border border-red-500/30 bg-red-500/15"
+                        : "border border-green-600/30 bg-green-600/15"
                 )}
-                {done && !error && (
-                    <p className="text-sm text-green-600">Thanks! We’ll be in touch soon.</p>
-                )}
-            </DialogContent>
-        </Dialog>
+            >
+                <div
+                    className={cn(
+                        "mt-0.5 h-2 w-2 rounded-full",
+                        isError ? "bg-red-500" : "bg-green-600"
+                    )}
+                />
+                <div className="flex-1 text-sm">{toast.message}</div>
+                <button
+                    aria-label="Dismiss"
+                    className="text-muted-foreground hover:text-foreground"
+                    onClick={onClose}
+                >
+                    ×
+                </button>
+            </div>
+        </div>
     );
 }
 
