@@ -3,7 +3,7 @@
 SHELL := /bin/sh
 WEB_DIR := apps/web
 
-.PHONY: help install dev build start lint docker-build docker-up docker-down docker-dev docker-rebuild clean
+.PHONY: help install dev build start lint docker-build docker-up docker-down docker-dev docker-rebuild clean deck-install deck-pdf deck-html deck-pptx
 
 help:
 	@echo "Usage: make <target>"
@@ -19,6 +19,10 @@ help:
 	@echo "  docker-rebuild Rebuild container without cache and restart"
 	@echo "  docker-down   Stop containers and remove network"
 	@echo "  clean         Remove node_modules and build artifacts"
+	@echo "  deck-install  Install Marp CLI globally"
+	@echo "  deck-pdf      Compile DECK.md to PDF via Marp"
+	@echo "  deck-html     Compile DECK.md to HTML via Marp"
+	@echo "  deck-pptx     Compile DECK.md to PowerPoint via Marp"
 
 install:
 	cd $(WEB_DIR) && npm install
@@ -54,4 +58,20 @@ docker-down:
 
 clean:
 	rm -rf $(WEB_DIR)/node_modules $(WEB_DIR)/.next
+
+# --- Deck (Marp) ---
+# Requires: npm install -g @marp-team/marp-cli
+DECK?=DECK.md
+
+deck-install:
+	npm install -g @marp-team/marp-cli
+
+deck-pdf:
+	marp $(DECK) --pdf --allow-local-files --output deck.pdf
+
+deck-html:
+	marp $(DECK) --html --allow-local-files --output deck.html
+
+deck-pptx:
+	marp $(DECK) --pptx --allow-local-files --output deck.pptx
 

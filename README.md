@@ -129,6 +129,41 @@ make docker-rebuild
 
 The Dockerfile is optimized for Next.js standalone output with multi-stage builds for minimal image size.
 
+## 🖥️ Pitch Deck (Marp)
+
+This repo includes a Markdown deck (`DECK.md`). You can compile it with Marp:
+
+### Install Marp CLI
+
+```bash
+npm install -g @marp-team/marp-cli
+```
+
+### Build commands
+
+```bash
+# PDF
+marp DECK.md --pdf --allow-local-files
+
+# HTML (interactive)
+marp DECK.md --html --allow-local-files
+
+# PowerPoint
+marp DECK.md --pptx --allow-local-files
+```
+
+Or use the Makefile targets (defaults to DECK.md; override with DECK=path.md):
+
+```bash
+make deck-install
+make deck-pdf        # outputs deck.pdf
+make deck-html       # outputs deck.html
+make deck-pptx       # outputs deck.pptx
+
+# Example with a different file
+make deck-pdf DECK=docs/pitch.md
+```
+
 ## 🎯 Quick Demo Script (2-3 minutes)
 
 ### Act 1: Guest Journey (30s)
