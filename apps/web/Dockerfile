@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1.7-labs
 
 # 1) Base deps
-FROM node:20-alpine AS base
+FROM node:22-alpine AS base
 WORKDIR /app
 
 # 2) Install dependencies (only package.json for better layer caching)
@@ -18,7 +18,7 @@ COPY . .
 RUN npm run build
 
 # 4) Production runtime
-FROM node:20-alpine AS runner
+FROM node:22-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
